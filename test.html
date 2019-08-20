@@ -106,24 +106,16 @@ function addMarker() {
     var marker = new AMap.Marker({
         map: map,
         position: [121.736143,42.104493]
-    });
-    //鼠标点击marker弹出自定义的信息窗体
-    AMap.event.addListener(marker, 'click', function () {
-        infoWindow.open(map, marker.getPosition());
-    });
-}
-//添加marker标记
-function addMarker() {
-    map.clearMap();
-    var marker = new AMap.Marker({
+        var marker1 = new AMap.Marker({
         map: map,
-        position: [121.736145,42.104494]
+        position: [121.736145,42.104492]
     });
     //鼠标点击marker弹出自定义的信息窗体
     AMap.event.addListener(marker, 'click', function () {
         infoWindow.open(map, marker.getPosition());
     });
 }
+
 //实例化信息窗体
 var title = '奈营高速玉龙新城站<span style="font-size:11px;color:#F00;">早点来</span>',
     content = [];
