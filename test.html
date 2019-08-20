@@ -112,11 +112,22 @@ function addMarker() {
         infoWindow.open(map, marker.getPosition());
     });
 }
-
+//添加marker标记
+function addMarker() {
+    map.clearMap();
+    var marker = new AMap.Marker({
+        map: map,
+        position: [121.736143,42.104493]
+    });
+    //鼠标点击marker弹出自定义的信息窗体
+    AMap.event.addListener(marker, 'click', function () {
+        infoWindow.open(map, marker.getPosition());
+    });
+}
 //实例化信息窗体
 var title = '奈营高速玉龙新城站<span style="font-size:11px;color:#F00;">早点来</span>',
     content = [];
-content.push("<img src='https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1566891488&di=de26bd0735dddd265ea879dd1449a813&imgtype=jpg&er=1&src=http%3A%2F%2Fs1.sinaimg.cn%2Fmw690%2F001CF22Izy6LoOC56y4d0%26amp%3B690'>地址：北京市朝阳区阜通东大街6号院3号楼东北8.3公里");
+content.push("<img src=''>地址：北京市朝阳区阜通东大街6号院3号楼东北8.3公里");
 content.push("电话：010-64733333");
 content.push("<a href='www.fuxin.gov.cn'>详细信息</a>");
 var infoWindow = new AMap.InfoWindow({
