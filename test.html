@@ -96,7 +96,7 @@
 var map = new AMap.Map("container", {
     resizeEnable: true,
     center: [121.736143,42.104493],
-    zoom: 16
+    zoom: 14
 });
 addMarker();
 
@@ -110,7 +110,7 @@ function addMarker() {
     });
      var marker1 = new AMap.Marker({
         map: map,
-        position: [121.731145,42.104423]
+        position: [121.790138,42.112118]
         
     });
     //鼠标点击marker弹出自定义的信息窗体
@@ -118,7 +118,7 @@ function addMarker() {
         infoWindow.open(map, marker.getPosition());
     });
      AMap.event.addListener(marker1, 'click', function () {
-        infoWindow.open(map, marker.getPosition());
+        infoWindow1.open(map, marker.getPosition());
     });
 }
 
@@ -129,6 +129,16 @@ content.push("<img src=''>地址：北京市朝阳区阜通东大街6号院3号�
 content.push("电话：010-64733333");
 content.push("<a href='www.fuxin.gov.cn'>详细信息</a>");
 var infoWindow = new AMap.InfoWindow({
+    isCustom: true,  //使用自定义窗体
+    content: createInfoWindow(title, content.join("<br/>")),
+    offset: new AMap.Pixel(16, -45)
+});
+    var title = '阜新东站<span style="font-size:11px;color:#F00;">早点来</span>',
+    content = [];
+content.push("<img src=''>地址：新邱");
+content.push("电话：010-64733333");
+content.push("<a href='www.fuxin.gov.cn'>详细信息</a>");
+var infoWindow1 = new AMap.InfoWindow({
     isCustom: true,  //使用自定义窗体
     content: createInfoWindow(title, content.join("<br/>")),
     offset: new AMap.Pixel(16, -45)
