@@ -117,6 +117,9 @@ function addMarker() {
     AMap.event.addListener(marker, 'click', function () {
         infoWindow.open(map, marker.getPosition());
     });
+     AMap.event.addListener(marker1, 'click', function () {
+        infoWindow.open(map, marker.getPosition());
+    });
 }
 
 //实例化信息窗体
